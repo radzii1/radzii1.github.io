@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radhika Arya — GenAI Engineer & AI Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --cream:#0A0F1E;
+  --cream2:#0F1628;
+  --cream3:#141D35;
+  --gold:#E8A598;
+  --gold2:#F0BDB5;
+  --gold3:#F8D5D0;
+  --green:#E8A598;
+  --rose:#F0BDB5;
+  --rose2:#F8D5D0;
+  --muted:#8899BB;
+  --border:#1E2D4D;
+  --ink:#F0EEF8;
+  --rosegold:#C9857A;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --body:'EB Garamond',Georgia,serif;
+  --sans:'Montserrat',system-ui,sans-serif;
+}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-weight:500;line-height:1.7;overflow-x:hidden;}
+
+/* ── TOP BORDER ── */
+.top-border{height:6px;background:linear-gradient(90deg,#0A0F1E,#C9857A,#E8A598,#C9857A,#0A0F1E);}
+
+/* ── NAV ── */
+nav{position:fixed;top:6px;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#F0F4FF;text-decoration:none;letter-spacing:0.02em;}
+.nav-logo span{color:#E8A598;font-style:italic;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:var(--sans);font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:#E8A598;}
+
+/* ── ORNAMENTAL SVG ── */
+.ornament-tl,.ornament-tr,.ornament-bl,.ornament-br{position:absolute;width:120px;height:120px;opacity:0.5;}
+.ornament-tl{top:0;left:0;}
+.ornament-tr{top:0;right:0;transform:scaleX(-1);}
+.ornament-bl{bottom:0;left:0;transform:scaleY(-1);}
+.ornament-br{bottom:0;right:0;transform:scale(-1,-1);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 5% 5rem;position:relative;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,133,122,0.12) 0%,transparent 70%);}
+.hero-content{position:relative;z-index:2;max-width:800px;}
+.hero-lotus{margin:0 auto 2rem;display:block;}
+.hero-eyebrow{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:#E8A598;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;gap:1rem;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'✦';font-size:0.6rem;color:var(--gold2);}
+.hero-name{font-family:var(--serif);font-size:clamp(4rem,9vw,8rem);font-weight:600;line-height:0.9;letter-spacing:0.02em;color:#F0F4FF;margin-bottom:0.5rem;}
+.hero-name em{font-style:italic;font-weight:500;color:#E8A598;display:block;}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.5rem 0;}
+.hero-divider-line{flex:1;max-width:120px;height:1px;background:linear-gradient(90deg,transparent,#E8A598,transparent);}
+.hero-divider-ornament{color:#E8A598;font-size:1rem;}
+.hero-role{font-family:var(--sans);font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.hero-bio{font-family:var(--body);font-size:1.1rem;color:var(--muted);line-height:1.9;font-weight:500;max-width:560px;margin:0 auto 2.5rem;}
+.hero-bio strong{color:var(--ink);}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn{font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2.2rem;transition:all 0.3s;display:inline-block;}
+.btn-primary{background:#C9857A;color:#0A0F1E;border:1px solid #C9857A;}
+.btn-primary:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+.btn-outline{border:1px solid var(--border);color:var(--ink);}
+.btn-outline:hover{border-color:#E8A598;color:#E8A598;}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.stat-n{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:#E8A598;}
+.stat-l{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+
+/* ── ORNAMENTAL DIVIDER ── */
+.orn-divider{display:flex;align-items:center;gap:1rem;padding:0 5%;margin:0;}
+.orn-divider-line{flex:1;height:1px;background:var(--border);}
+.orn-divider-center{color:#E8A598;font-size:1.2rem;white-space:nowrap;}
+
+/* ── SECTIONS ── */
+.section{padding:5rem 5%;position:relative;}
+.section-header{text-align:center;margin-bottom:4rem;}
+.section-eyebrow{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#E8A598;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.8rem;}
+.section-eyebrow::before,.section-eyebrow::after{content:'—';color:var(--gold2);}
+.section-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:600;color:#F0F4FF;line-height:1.1;}
+.section-title em{font-style:italic;color:#E8A598;}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto;}
+.about-text p{font-size:1rem;color:var(--muted);line-height:1.95;margin-bottom:1.4rem;}
+.about-text p strong{color:var(--ink);}
+.pullquote{font-family:var(--serif);font-size:1.5rem;font-style:italic;font-weight:500;color:#E8A598;line-height:1.5;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1.8rem 0;text-align:center;}
+.about-details{}
+.detail-item{padding:0.9rem 0;border-bottom:1px solid var(--border);}
+.detail-item:first-child{border-top:1px solid var(--border);}
+.detail-key{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8A598;margin-bottom:0.25rem;}
+.detail-val{font-size:0.88rem;color:var(--ink);}
+.expertise-block{margin-top:2rem;padding:1.5rem;background:#0F1628;border:1px solid #1E2D4D;}
+.expertise-title{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8A598;margin-bottom:1rem;}
+.expertise-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.expertise-tag{font-size:0.75rem;color:var(--muted);padding:0.25rem 0.8rem;border:1px solid var(--border);font-family:var(--sans);}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);max-width:1100px;margin:0 auto;}
+.skill-block{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.2s;}
+.skill-block:hover{background:#0F1628;}
+.skill-block:nth-child(3n){border-right:none;}
+.skill-block:nth-last-child(-n+3){border-bottom:none;}
+.skill-cat{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8A598;margin-bottom:1rem;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.skill-tag{font-size:0.74rem;color:var(--muted);padding:0.2rem 0.6rem;border:1px solid var(--border);font-family:var(--sans);transition:all 0.2s;}
+.skill-tag:hover{border-color:#E8A598;color:#E8A598;}
+
+/* ── PROJECTS ── */
+.projects-list{max-width:1100px;margin:0 auto;}
+.project-item{display:grid;grid-template-columns:80px 1fr auto;gap:3rem;align-items:start;padding:2.5rem 0;border-bottom:1px solid var(--border);transition:all 0.25s;text-decoration:none;cursor:pointer;}
+.project-item:first-child{border-top:1px solid var(--border);}
+.project-item:hover{padding-left:1rem;}
+.project-num{font-family:var(--sans);font-size:0.65rem;color:#E8A598;letter-spacing:0.1em;padding-top:0.3rem;}
+.project-status{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.status-live{color:#3A7A2A;}
+.project-name{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:#F0F4FF;margin-bottom:0.7rem;line-height:1.2;}
+.project-desc{font-size:0.88rem;color:var(--muted);line-height:1.85;max-width:580px;margin-bottom:1rem;}
+.project-stack{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.stack-tag{font-family:var(--sans);font-size:0.62rem;color:var(--muted);padding:0.2rem 0.6rem;background:var(--cream2);}
+.project-arrow{font-size:1.1rem;color:var(--border);transition:all 0.25s;padding-top:0.3rem;align-self:center;}
+.project-item:hover .project-arrow{color:#E8A598;transform:translateX(4px);}
+
+/* ── EXPERIENCE ── */
+.exp-list{max-width:1100px;margin:0 auto;}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:4rem;padding:2.5rem 0;border-bottom:1px solid var(--border);}
+.exp-item:first-child{border-top:1px solid var(--border);}
+.exp-date{font-family:var(--sans);font-size:0.68rem;color:#E8A598;letter-spacing:0.06em;padding-top:0.3rem;}
+.exp-role{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:#F0F4FF;margin-bottom:0.2rem;}
+.exp-company{font-family:var(--sans);font-size:0.7rem;color:var(--muted);letter-spacing:0.06em;margin-bottom:1rem;}
+.exp-bullets{list-style:none;}
+.exp-bullets li{font-size:0.88rem;color:var(--muted);line-height:1.75;padding:0.25rem 0 0.25rem 1.2rem;position:relative;}
+.exp-bullets li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.55rem;top:0.5rem;}
+
+/* ── EDUCATION ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);max-width:1100px;margin:0 auto;}
+.edu-item{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.2s;}
+.edu-item:hover{background:#0F1628;}
+.edu-item:nth-child(2n){border-right:none;}
+.edu-item:nth-last-child(-n+2){border-bottom:none;}
+.edu-type{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8A598;margin-bottom:0.7rem;}
+.edu-degree{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#F0F4FF;margin-bottom:0.3rem;line-height:1.3;}
+.edu-school{font-size:0.82rem;color:var(--muted);font-family:var(--sans);}
+
+/* ── CONTACT ── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto;}
+.contact-headline{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;color:var(--green);line-height:1.1;margin-bottom:1.2rem;}
+.contact-headline em{font-style:italic;color:var(--gold);}
+.contact-sub{font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
+.contact-links{display:flex;flex-direction:column;}
+.contact-link{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink);font-size:0.88rem;transition:all 0.2s;}
+.contact-link:first-child{border-top:1px solid var(--border);}
+.contact-link:hover{padding-left:0.5rem;color:#E8A598;}
+.contact-link-label{font-family:var(--sans);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.contact-card{background:#141D35;border:1px solid #2A3D5E;padding:3.5rem;position:relative;overflow:hidden;}
+.contact-card-quote{font-family:var(--serif);font-size:1.35rem;font-style:italic;font-weight:300;color:rgba(255,253,245,0.9);margin-bottom:2rem;line-height:1.6;}
+.contact-detail{padding:0.8rem 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.contact-detail:last-of-type{border-bottom:none;}
+.contact-detail-key{font-family:var(--sans);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8A598;margin-bottom:0.2rem;}
+.contact-detail-val{font-size:0.85rem;color:rgba(255,253,245,0.75);font-family:var(--sans);}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2rem 5%;border-top:1px solid var(--border);}
+.footer-ornament{color:#E8A598;font-size:0.9rem;margin-bottom:0.5rem;}
+.footer-text{font-family:var(--sans);font-size:0.68rem;color:var(--muted);letter-spacing:0.08em;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:1rem 5%;}
+  .nav-links{display:none;}
+  .hero{padding:7rem 5% 4rem;}
+  .hero-stats{gap:1.5rem;}
+  .about-grid{grid-template-columns:1fr;gap:3rem;}
+  .skills-grid{grid-template-columns:1fr;}
+  .skill-block{border-right:none;}
+  .project-item{grid-template-columns:1fr;gap:1rem;}
+  .project-num{display:none;}
+  .exp-item{grid-template-columns:1fr;gap:0.5rem;}
+  .edu-grid{grid-template-columns:1fr;}
+  .edu-item{border-right:none;}
+  .contact-wrap{grid-template-columns:1fr;gap:3rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="top-border"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Radhika <span>Arya</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Ornamental corners -->
+  <svg class="ornament-tl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#C9857A" stroke-width="1.2" opacity="0.6">
+      <path d="M5,5 Q30,5 30,30 Q30,5 55,5"/>
+      <path d="M5,5 Q5,30 30,30 Q5,30 5,55"/>
+      <path d="M15,5 Q35,15 35,35 Q15,35 5,15"/>
+      <circle cx="30" cy="30" r="8" fill="none"/>
+      <circle cx="30" cy="30" r="3" fill="#C9857A" opacity="0.5"/>
+      <path d="M8,8 Q20,8 20,20"/>
+      <path d="M8,8 Q8,20 20,20"/>
+      <path d="M25,5 Q25,15 35,15 Q35,5 45,5"/>
+      <path d="M5,25 Q15,25 15,35 Q5,35 5,45"/>
+      <circle cx="12" cy="12" r="2" fill="#C9857A" opacity="0.4"/>
+      <circle cx="48" cy="8" r="1.5" fill="#C9857A" opacity="0.4"/>
+      <circle cx="8" cy="48" r="1.5" fill="#C9857A" opacity="0.4"/>
+    </g>
+  </svg>
+
+  <svg class="ornament-tr" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#C9857A" stroke-width="1.2" opacity="0.6">
+      <path d="M5,5 Q30,5 30,30 Q30,5 55,5"/>
+      <path d="M5,5 Q5,30 30,30 Q5,30 5,55"/>
+      <path d="M15,5 Q35,15 35,35 Q15,35 5,15"/>
+      <circle cx="30" cy="30" r="8" fill="none"/>
+      <circle cx="30" cy="30" r="3" fill="#C9857A" opacity="0.5"/>
+      <path d="M8,8 Q20,8 20,20"/>
+      <path d="M8,8 Q8,20 20,20"/>
+      <path d="M25,5 Q25,15 35,15 Q35,5 45,5"/>
+      <path d="M5,25 Q15,25 15,35 Q5,35 5,45"/>
+      <circle cx="12" cy="12" r="2" fill="#C9857A" opacity="0.4"/>
+    </g>
+  </svg>
+
+  <svg class="ornament-bl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#C9857A" stroke-width="1.2" opacity="0.6">
+      <path d="M5,5 Q30,5 30,30 Q30,5 55,5"/>
+      <path d="M5,5 Q5,30 30,30 Q5,30 5,55"/>
+      <path d="M15,5 Q35,15 35,35 Q15,35 5,15"/>
+      <circle cx="30" cy="30" r="8" fill="none"/>
+      <circle cx="30" cy="30" r="3" fill="#C9857A" opacity="0.5"/>
+      <path d="M8,8 Q20,8 20,20"/>
+      <path d="M8,8 Q8,20 20,20"/>
+    </g>
+  </svg>
+
+  <svg class="ornament-br" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#C9857A" stroke-width="1.2" opacity="0.6">
+      <path d="M5,5 Q30,5 30,30 Q30,5 55,5"/>
+      <path d="M5,5 Q5,30 30,30 Q5,30 5,55"/>
+      <path d="M15,5 Q35,15 35,35 Q15,35 5,15"/>
+      <circle cx="30" cy="30" r="8" fill="none"/>
+      <circle cx="30" cy="30" r="3" fill="#C9857A" opacity="0.5"/>
+      <path d="M8,8 Q20,8 20,20"/>
+      <path d="M8,8 Q8,20 20,20"/>
+    </g>
+  </svg>
+
+  <div class="hero-content reveal">
+
+    <!-- Lotus SVG -->
+    <svg class="hero-lotus" width="100" height="80" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g opacity="0.85">
+        <!-- outer petals -->
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#F2C4C8" opacity="0.6" transform="rotate(-30 50 55)"/>
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#F2C4C8" opacity="0.6" transform="rotate(30 50 55)"/>
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#F2C4C8" opacity="0.6" transform="rotate(-60 50 55)"/>
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#F2C4C8" opacity="0.6" transform="rotate(60 50 55)"/>
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#EDB8BC" opacity="0.5" transform="rotate(-90 50 55)"/>
+        <ellipse cx="50" cy="55" rx="9" ry="22" fill="#EDB8BC" opacity="0.5" transform="rotate(90 50 55)"/>
+        <!-- inner petals -->
+        <ellipse cx="50" cy="50" rx="7" ry="18" fill="#FAD5D8" opacity="0.9" transform="rotate(-20 50 50)"/>
+        <ellipse cx="50" cy="50" rx="7" ry="18" fill="#FAD5D8" opacity="0.9" transform="rotate(20 50 50)"/>
+        <ellipse cx="50" cy="50" rx="7" ry="18" fill="#FAD5D8" opacity="0.9" transform="rotate(-50 50 50)"/>
+        <ellipse cx="50" cy="50" rx="7" ry="18" fill="#FAD5D8" opacity="0.9" transform="rotate(50 50 50)"/>
+        <ellipse cx="50" cy="45" rx="6" ry="16" fill="#FDE8EA" opacity="0.95"/>
+        <!-- center -->
+        <circle cx="50" cy="42" r="10" fill="#F5E6C8"/>
+        <circle cx="50" cy="42" r="7" fill="#E8D4A0"/>
+        <!-- stamens -->
+        <circle cx="47" cy="39" r="1.2" fill="#C9A040"/>
+        <circle cx="53" cy="39" r="1.2" fill="#C9A040"/>
+        <circle cx="50" cy="37" r="1.2" fill="#C9A040"/>
+        <circle cx="46" cy="42" r="1" fill="#C9A040"/>
+        <circle cx="54" cy="42" r="1" fill="#C9A040"/>
+        <circle cx="50" cy="44" r="1" fill="#C9A040"/>
+        <!-- stem -->
+        <path d="M50,65 Q48,72 46,78" stroke="#4A7A28" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <path d="M50,65 Q52,70 53,76" stroke="#4A7A28" stroke-width="1.2" fill="none" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <div class="hero-eyebrow">GenAI Engineer & AI Strategist</div>
+    <h1 class="hero-name">Radhika<em>Arya</em></h1>
+
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-ornament">✦ ✦ ✦</div>
+      <div class="hero-divider-line"></div>
+    </div>
+
+    <p class="hero-role">MSc Artificial Intelligence · Dubai, UAE · Available Now</p>
+    <p class="hero-bio">I build AI systems that <strong>actually work in production</strong> — LLM agents, voice AI, and automation pipelines. <strong>Something new ships every day.</strong> Not demos. Not slides. Real systems solving real business problems across the UAE.</p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View my work</a>
+      <a href="mailto:vigradhika33@gmail.com" class="btn btn-outline">Get in touch</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="stat-n">2+</div><div class="stat-l">Production systems</div></div>
+      <div class="hero-stat"><div class="stat-n">MSc</div><div class="stat-l">Artificial Intelligence</div></div>
+      <div class="hero-stat"><div class="stat-n">500+</div><div class="stat-l">Employee enterprise</div></div>
+      <div class="hero-stat"><div class="stat-n">1</div><div class="stat-l">Published research</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORNAMENTAL DIVIDER -->
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">About</div>
+    <h2 class="section-title">Building AI that <em>actually works</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I am a GenAI Engineer and AI Strategist with an MSc in Artificial Intelligence, based in Dubai. I work at the intersection of <strong>AI engineering and business transformation</strong>, designing and deploying AI solutions that solve real operational challenges and deliver measurable business value.</p>
+      <p>I specialise in Generative AI, LLM applications, multi-agent systems, voice AI, workflow automation, and enterprise AI adoption. My experience spans building <strong>production-ready AI systems</strong>, introducing AI capabilities into traditional engineering environments, and developing strategies that improve efficiency and scalability.</p>
+      <div class="pullquote">"I build AI before anyone asks me to — agents, automations, voice systems. Something new every single day."</div>
+      <p>I am passionate about turning emerging AI technologies into <strong>practical business tools</strong>. From intelligent agents and AI-powered workflows to voice systems and automation platforms, I focus on solutions that move beyond experimentation and create tangible impact.</p>
+      <p>As the <strong>first woman in my family</strong> to move abroad independently to pursue a Master's degree, I have built my career through resilience, continuous learning, and a commitment to excellence.</p>
+      <div class="expertise-block">
+        <div class="expertise-title">Core Expertise</div>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Generative AI & LLMs</span>
+          <span class="expertise-tag">Agentic AI & Multi-Agent Systems</span>
+          <span class="expertise-tag">Voice AI & Conversational Systems</span>
+          <span class="expertise-tag">AI Strategy & Digital Transformation</span>
+          <span class="expertise-tag">Python & AI Application Development</span>
+          <span class="expertise-tag">Workflow Automation</span>
+          <span class="expertise-tag">Enterprise AI Adoption</span>
+          <span class="expertise-tag">ESG Analytics & Sustainability Tech</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-details reveal">
+      <div class="detail-item"><div class="detail-key">Location</div><div class="detail-val">Dubai, UAE</div></div>
+      <div class="detail-item"><div class="detail-key">Education</div><div class="detail-val">MSc Artificial Intelligence<br>De Montfort University, Dubai</div></div>
+      <div class="detail-item"><div class="detail-key">Specialisation</div><div class="detail-val">GenAI · LLM Agents · Voice AI · Automation</div></div>
+      <div class="detail-item"><div class="detail-key">Currently</div><div class="detail-val">AI Engineer & Sustainability Analyst, BETAM Dubai</div></div>
+      <div class="detail-item"><div class="detail-key">Email</div><div class="detail-val">vigradhika33@gmail.com</div></div>
+      <div class="detail-item"><div class="detail-key">GitHub</div><div class="detail-val">github.com/radzii1</div></div>
+      <div class="detail-item"><div class="detail-key">LinkedIn</div><div class="detail-val">linkedin.com/in/radhikaarya10</div></div>
+      <div class="detail-item"><div class="detail-key">Website</div><div class="detail-val">radzii1.github.io</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Skills</div>
+    <h2 class="section-title">Technical <em>expertise</em></h2>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-block"><div class="skill-cat">AI & LLMs</div><div class="skill-tags"><span class="skill-tag">OpenAI GPT-4o</span><span class="skill-tag">Anthropic Claude</span><span class="skill-tag">LLM Agents</span><span class="skill-tag">RAG Pipelines</span><span class="skill-tag">LangGraph</span><span class="skill-tag">CrewAI</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Pydantic</span></div></div>
+    <div class="skill-block"><div class="skill-cat">Voice & Conversational AI</div><div class="skill-tags"><span class="skill-tag">VAPI</span><span class="skill-tag">ElevenLabs</span><span class="skill-tag">Retell AI</span><span class="skill-tag">Synthflow</span><span class="skill-tag">Voice Agents</span><span class="skill-tag">Multilingual EN/AR</span></div></div>
+    <div class="skill-block"><div class="skill-cat">Automation</div><div class="skill-tags"><span class="skill-tag">Make.com</span><span class="skill-tag">n8n</span><span class="skill-tag">Zapier</span><span class="skill-tag">WhatsApp Business API</span><span class="skill-tag">Webhooks</span><span class="skill-tag">CRM Integration</span></div></div>
+    <div class="skill-block"><div class="skill-cat">Engineering</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Flask</span><span class="skill-tag">REST APIs</span><span class="skill-tag">Docker</span><span class="skill-tag">NLP</span></div></div>
+    <div class="skill-block"><div class="skill-cat">Data & Cloud</div><div class="skill-tags"><span class="skill-tag">Pinecone</span><span class="skill-tag">Supabase</span><span class="skill-tag">Azure</span><span class="skill-tag">LangSmith</span><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span></div></div>
+    <div class="skill-block"><div class="skill-cat">Sustainability & ESG</div><div class="skill-tags"><span class="skill-tag">GHG Protocol</span><span class="skill-tag">GRI Standards</span><span class="skill-tag">SASB</span><span class="skill-tag">Scope 1·2·3</span><span class="skill-tag">ESG Reporting</span></div></div>
+  </div>
+</section>
+
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Projects</div>
+    <h2 class="section-title">Deployed AI <em>systems</em></h2>
+  </div>
+  <div class="projects-list">
+    <a href="https://firegate-amc-agent-az9ybkpbmq6njpyw3tqje8.streamlit.app" target="_blank" class="project-item reveal">
+      <div class="project-num">01</div>
+      <div>
+        <div class="project-status status-live">● Live & Deployed</div>
+        <div class="project-name">AMC Renewal Intelligence Agent</div>
+        <p class="project-desc">End-to-end AI agent for a UAE enterprise with 500+ employees. Monitors expiring contracts, researches NFPA compliance, calculates risk scores, and generates professional renewal proposals in under 20 seconds. Built before any formal engagement.</p>
+        <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">LangGraph</span><span class="stack-tag">OpenAI GPT-4o</span><span class="stack-tag">Streamlit</span><span class="stack-tag">Make.com</span></div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+    <a href="https://github.com/radzii1" target="_blank" class="project-item reveal">
+      <div class="project-num">02</div>
+      <div>
+        <div class="project-status status-live">● Live & Deployed</div>
+        <div class="project-name">Voice AI Quote Follow-Up Agent</div>
+        <p class="project-desc">Outbound voice AI agent on VAPI that automatically calls clients who received quotations. Speaks English and Arabic. Qualifies interest, answers questions, and books meetings — zero manual input required.</p>
+        <div class="project-stack"><span class="stack-tag">VAPI</span><span class="stack-tag">ElevenLabs</span><span class="stack-tag">Make.com</span><span class="stack-tag">OpenAI</span><span class="stack-tag">Google Sheets</span></div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+    <a href="https://github.com/radzii1" target="_blank" class="project-item reveal">
+      <div class="project-num">03</div>
+      <div>
+        <div class="project-status status-live">● Live & Deployed</div>
+        <div class="project-name">Marketing Intelligence Pipeline</div>
+        <p class="project-desc">Automated pipeline monitoring UAE construction activity daily. Generates branded LinkedIn content and delivers to team inbox automatically. Zero manual input from trigger to delivery.</p>
+        <div class="project-stack"><span class="stack-tag">Make.com</span><span class="stack-tag">OpenAI GPT-4o</span><span class="stack-tag">Google Sheets</span><span class="stack-tag">Gmail API</span></div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+    <a href="https://github.com/radzii1/AI-Hiring-Bias-Auditor" target="_blank" class="project-item reveal">
+      <div class="project-num">04</div>
+      <div>
+        <div class="project-status status-live">● Live & Deployed</div>
+        <div class="project-name">AI Hiring Bias Auditor</div>
+        <p class="project-desc">Full AI pipeline auditing job descriptions for hidden bias across 5 dimensions using GPT-4o structured outputs with Pydantic schema enforcement. Deployed live on Streamlit Cloud.</p>
+        <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">OpenAI API</span><span class="stack-tag">Streamlit</span><span class="stack-tag">Pydantic</span></div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+    <a href="https://github.com/radzii1/Goal-Coach-agent" target="_blank" class="project-item reveal">
+      <div class="project-num">05</div>
+      <div>
+        <div class="project-status status-live">● Live & Deployed</div>
+        <div class="project-name">Goal Coach Agent</div>
+        <p class="project-desc">Multi-step AI agent with 4 specialist tools — goal planning, task retrieval, progress tracking, and nudge generation. Persistent memory across sessions. Shipped from idea to production in under 4 hours.</p>
+        <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">OpenAI API</span><span class="stack-tag">Streamlit</span><span class="stack-tag">Persistent Memory</span></div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Experience</div>
+    <h2 class="section-title">Professional <em>journey</em></h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item reveal">
+      <div class="exp-date">Dec 2024 — Present</div>
+      <div>
+        <div class="exp-role">AI Engineer & Sustainability Analyst</div>
+        <div class="exp-company">Bin Dasmal Engineering Technologies & Management · Dubai, UAE</div>
+        <ul class="exp-bullets">
+          <li>Leading AI adoption for a UAE MEP engineering firm — identifying opportunities, building tools, and driving implementation across teams.</li>
+          <li>Appointed as POC for construction software onboarding — managing end-to-end implementation, user training, and adoption.</li>
+          <li>Presented structured AI adoption proposals to senior leadership — evaluating LLM tools, automation platforms, and implementation frameworks.</li>
+          <li>Led the organisation's inaugural ESG report across GRI, SASB, and GHG Protocol standards — built Python-based carbon reporting tools used in production.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Oct 2022 — Apr 2023</div>
+      <div>
+        <div class="exp-role">Research Intern — AI & NLP</div>
+        <div class="exp-company">Ajeenkya DY Patil University · India</div>
+        <ul class="exp-bullets">
+          <li>Built NLP models for low-resource language translation using Word2Vec embeddings.</li>
+          <li>Published research at ICETEC 2023: 'Enhancing Translation Quality Using Word2Vec.'</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Education & Certifications</div>
+    <h2 class="section-title">Academic <em>background</em></h2>
+  </div>
+  <div class="edu-grid reveal">
+    <div class="edu-item"><div class="edu-type">Master's Degree</div><div class="edu-degree">MSc Artificial Intelligence</div><div class="edu-school">De Montfort University · Dubai · 2024</div></div>
+    <div class="edu-item"><div class="edu-type">Bachelor's Degree</div><div class="edu-degree">B.Tech Computer Engineering — AI Specialisation</div><div class="edu-school">DY Patil University · India · 2023</div></div>
+    <div class="edu-item"><div class="edu-type">Certification</div><div class="edu-degree">Google AI Professional Certificate</div><div class="edu-school">Google / Coursera · April 2026</div></div>
+    <div class="edu-item"><div class="edu-type">Certification</div><div class="edu-degree">Building with the Claude API</div><div class="edu-school">Anthropic Academy · May 2026</div></div>
+    <div class="edu-item"><div class="edu-type">Certification</div><div class="edu-degree">ESG Risks & Opportunities</div><div class="edu-school">Wharton, University of Pennsylvania</div></div>
+    <div class="edu-item"><div class="edu-type">Certification</div><div class="edu-degree">n8n AI Agent Builder</div><div class="edu-school">n8n Academy · 2025</div></div>
+  </div>
+</section>
+
+<div class="orn-divider"><div class="orn-divider-line"></div><div class="orn-divider-center">✦ &nbsp; ✦ &nbsp; ✦</div><div class="orn-divider-line"></div></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">Let's build something <em>remarkable</em></h2>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <p class="contact-sub">Open to AI engineering roles, GenAI strategy positions, and AI implementation projects across UAE and GCC.</p>
+      <div class="contact-links">
+        <a href="mailto:vigradhika33@gmail.com" class="contact-link"><span>vigradhika33@gmail.com</span><span class="contact-link-label">Email</span></a>
+        <a href="https://linkedin.com/in/radhikaarya10" target="_blank" class="contact-link"><span>linkedin.com/in/radhikaarya10</span><span class="contact-link-label">LinkedIn</span></a>
+        <a href="https://github.com/radzii1" target="_blank" class="contact-link"><span>github.com/radzii1</span><span class="contact-link-label">GitHub</span></a>
+        <a href="tel:+971562907846" class="contact-link"><span>+971 562907846</span><span class="contact-link-label">Phone</span></a>
+      </div>
+    </div>
+    <div class="contact-card reveal">
+      <div class="contact-card-quote">"I build AI before anyone asks me to."</div>
+      <div class="contact-detail"><div class="contact-detail-key">Available for</div><div class="contact-detail-val">Full-time · Freelance · Consulting</div></div>
+      <div class="contact-detail"><div class="contact-detail-key">Expertise</div><div class="contact-detail-val">LLM Agents · Voice AI · Automation</div></div>
+      <div class="contact-detail"><div class="contact-detail-key">Location</div><div class="contact-detail-val">Dubai, UAE · Open to GCC</div></div>
+      <a href="mailto:vigradhika33@gmail.com" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block;background:#E8A598;color:#0A0F1E;">Send a message</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="footer-text">© 2026 Radhika Arya · GenAI Engineer & AI Strategist · Dubai, UAE</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
